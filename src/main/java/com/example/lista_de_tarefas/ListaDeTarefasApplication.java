@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ListaDeTarefasApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ListaDeTarefasApplication.class, args);
 	}
 

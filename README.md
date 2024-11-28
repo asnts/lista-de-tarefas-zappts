@@ -25,7 +25,8 @@
 ### • Executar esta aplicação:
 ` $ java -jar target/lista-de-tarefas-0.0.1-SNAPSHOT.jar `
 ### • Acessar API:
-A API poderá ser acessada em localhost:8080
+A API poderá ser acessada em: localhost:8080
+O Swagger desta aplicação está disponivel em: http://localhost:8080/swagger-ui/index.html
 
 ## API Endpoints
 #### Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta Postman:

@@ -9,9 +9,10 @@
 
 ## Tecnologias
 
-### • Spring Boot
-### • Spring MVC
-### • Database H2
+### • [Spring Boot](https://spring.io/projects/spring-boot)
+### • [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+### • [SpringDoc OpenAPI](https://www.baeldung.com/spring-rest-openapi-documentation)
+### • [Database H2](https://www.h2database.com/html/main.html) 
 
 ## Como executar esta aplicação:
 
@@ -52,7 +53,7 @@
 #### Obs 2: Os únicos formatos de status aceitos são: PENDENTE, EM_ANDAMENTO E CONCLUIDA todos em letra maiúscula. Se não seguir este formato receberá um erro de bad request
 
 
-### • listar Tarefas
+### • Listar Tarefas
 
 ` $  http GET :8080/tarefas `
 
@@ -147,3 +148,37 @@
 []
 
 ``` 
+
+## Configuração do Banco de Dados
+
+#### Este projeto utiliza o banco de dados **H2** em modo persistente para gerenciar as informações. 
+
+### Configuração:
+
+#### As propriedades deste banco estão configuradas no arquivo application.properties
+
+### Acesso:
+
+#### Para acessar o banco de dados desta aplicação acesse:
+
+`  $ http://localhost:8080/h2-console `
+
+#### Use o seguinte URL JDBC: 
+
+`  $ jdbc:h2:file:./data/lista_de_tarefas `
+
+#### Usuario:
+
+`  sa `
+
+#### Senha:
+
+Deixe em branco ou configure uma de sua escolha 
+
+#### Para verificar os dados:
+
+`   SELECT * FROM Tarefas; `
+
+
+
+

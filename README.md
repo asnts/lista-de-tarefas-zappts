@@ -68,6 +68,60 @@
 
 ``` 
 
+### • listar Tarefas Paginadas
+
+` $  http GET :8080/tarefas?page=0&size=2 `
+
+```yaml
+{
+  "content": [
+    {
+      "id": 1,
+      "titulo": "Ajustar paginacao",
+      "descricao": "Tarefas paginadas",
+      "status": "CONCLUIDA",
+      "dataCriacao": "2024-11-28T18:11:19.65611",
+      "dataConclusao": "2024-11-28T18:17:25.017979"
+    },
+    {
+      "id": 2,
+      "titulo": "Ajustar response",
+      "descricao": "Operacoes com sucesso ou nao",
+      "status": "EM_ANDAMENTO",
+      "dataCriacao": "2024-11-28T18:11:37.291006",
+      "dataConclusao": null
+    }
+  ],
+  "pageable": {
+    "pageNumber": 0,
+    "pageSize": 2,
+    "sort": {
+      "empty": true,
+      "unsorted": true,
+      "sorted": false
+    },
+    "offset": 0,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": false,
+  "totalPages": 5,
+  "totalElements": 10,
+  "first": true,
+  "size": 2,
+  "number": 0,
+  "sort": {
+    "empty": true,
+    "unsorted": true,
+    "sorted": false
+  },
+  "numberOfElements": 2,
+  "empty": false
+}
+
+``` 
+
+
 ### • Atualizar Tarefas
 
 ` $  http PUT :8080/tarefas/1 `
@@ -77,7 +131,7 @@
 "id": "1",
 "titulo": "Titulo da tarefa",
 "descricao": "Descrição da tarefa",
-"status" : "CONCLUIDA",
+"status" : "EM_ANDAMENTO",
 "data criacao": "2024-11-27T19:48:15.626675",
 "data conclusao": "null"
 } 

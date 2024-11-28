@@ -5,8 +5,9 @@ import com.example.lista_de_tarefas.entity.Tarefa;
 import com.example.lista_de_tarefas.repository.TarefaRepository;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,6 +55,10 @@ public class TarefaService {
 
     public List<Tarefa> listarTarefas() {
         return tarefaRepository.findAll();
+    }
+
+    public Page<Tarefa> listarTarefasPaginadas(Pageable pageable) {
+        return tarefaRepository.findAll(pageable);
     }
 
 

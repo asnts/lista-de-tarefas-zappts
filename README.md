@@ -1,6 +1,6 @@
 # Bem vindo(a) ao sistema de listas de tarefas 📝 #
 
-## Esta aplicação tem como objetivo o gerenciamento de tarefas onde é possivel:
+## Esta aplicação tem como objetivo o gerenciamento de tarefas na qual é possivel:
 
 ### • Adicionar tarefas ➕
 ### • Atualizar tarefas 🔄
@@ -49,8 +49,7 @@
 } 
 
 ``` 
-#### Obs 1: Tanto o id, quanto a data de criação e conclusão não precisam ser preenchidas pois o sistema preenche automaticamente; <br> 
-#### Obs 2: Os únicos formatos de status aceitos são: PENDENTE, EM_ANDAMENTO E CONCLUIDA todos em letra maiúscula. Se não seguir este formato receberá um erro de bad request
+#### Obs : Os únicos formatos de status aceitos são: PENDENTE, EM_ANDAMENTO E CONCLUIDA todos em letra maiúscula. Se não seguir este formato, receberá um erro de bad request
 
 
 ### • Listar Tarefas

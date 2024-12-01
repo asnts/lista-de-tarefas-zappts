@@ -21,6 +21,9 @@ public class TarefaService {
         this.tarefaRepository = tarefaRepository;
     }
     public Tarefa criarTarefa(Tarefa tarefa) {
+        if (tarefa.getStatus() == Status.CONCLUIDA) {
+            tarefa.setDataConclusao(LocalDateTime.now());
+        }
         return tarefaRepository.save(tarefa);
     }
 
@@ -45,8 +48,12 @@ public class TarefaService {
         tarefa.setStatus(tarefaAtualizada.getStatus());
 
 
-        if (tarefa.getStatus() == Status.CONCLUIDA) {
+
+
+        if (tarefa.getStatus().equals(Status.CONCLUIDA)) {
             tarefa.setDataConclusao(LocalDateTime.now());
+        } else {
+            tarefa.setDataConclusao(null);
         }
 
         return tarefaRepository.save(tarefa);
@@ -72,4 +79,6 @@ public class TarefaService {
         }
         tarefaRepository.deleteById(id);
     }
+
+
 }

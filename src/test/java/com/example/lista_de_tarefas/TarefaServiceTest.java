@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -66,9 +68,11 @@ class  TarefaServiceTest{
 
         Tarefa tarefaAtualizada = new Tarefa();
 
-        tarefaAtualizada.setTitulo("Novo Titulo");
-        tarefaAtualizada.setDescricao("Nova Descricao");
+        tarefaAtualizada.setTitulo("Novo titulo");
+        tarefaAtualizada.setDescricao("Nova descricao");
         tarefaAtualizada.setStatus(Status.CONCLUIDA);
+
+
 
         when(tarefaRepository.findById(tarefaId)).thenReturn(java.util.Optional.of(tarefaExistente));
         when(tarefaRepository.save(any(Tarefa.class))).thenReturn(tarefaExistente);
@@ -77,13 +81,16 @@ class  TarefaServiceTest{
 
         assertNotNull(resultado);
         assertEquals("Novo titulo", resultado.getTitulo());
-        assertEquals("Nova Descrição", resultado.getDescricao());
+        assertEquals("Nova descricao", resultado.getDescricao());
         assertEquals(Status.CONCLUIDA, resultado.getStatus());
         assertNotNull(resultado.getDataConclusao());
         verify(tarefaRepository, times(1)).findById(tarefaId);
         verify(tarefaRepository, times(1)).save(tarefaExistente);
 
 
+    }
+
+    private void assertNotNull(LocalDateTime dataConclusao) {
     }
 
 

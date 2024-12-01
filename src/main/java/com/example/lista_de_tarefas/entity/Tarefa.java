@@ -27,7 +27,7 @@ public class Tarefa {
     private LocalDateTime dataConclusao;
 
     public Tarefa() {
-        // Construtor padrão
+        
     }
 
     public Tarefa(String titulo, String descricao, Status status) {
@@ -36,7 +36,7 @@ public class Tarefa {
         this.status = status;
     }
 
-    // Getters e Setters
+    
     public long getId() {
         return id;
     }
